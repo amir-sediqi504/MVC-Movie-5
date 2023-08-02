@@ -8,25 +8,17 @@ namespace MvcMovie5.Controllers
 {
     public class HelloWorldController : Controller
     {
-        // 
-        // GET: /HelloWorld/ 
-
         public ActionResult Index()
         {
             return View();
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
-
-        public string Welcome()
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return "This is the Welcome action method...";
-        }
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
 
-        public string Welcomee()
-        {
-            return "This is the Welcome action method...";
+            return View();
         }
     }
 }
